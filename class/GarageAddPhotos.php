@@ -1,8 +1,14 @@
 <?php
 
+$ds = DIRECTORY_SEPARATOR;
+$base_dir = realpath(dirname(__FILE__)  . $ds . '..') . $ds;
+require_once("{$base_dir}conf{$ds}dbSettings.php");
+
+include_once 'MySQL5.php';
+
+
 class GarageAddPhotos
 {
-    $connect_to_db = mysqli_connect('localhost', 'user', 'pass', 'db');
 
     $user = $_POST['user'];
 
@@ -34,7 +40,9 @@ class GarageAddPhotos
         $size = ($_FILES["file"]["size"]/1024).' kB';
 
         //Save to your Database
-        mysqli_query($connect_to_db, "INSERT INTO images (user, filelocation, size) VALUES ('$user', '$filelocation', '$size')");
+		$m = new MySQL5();
+		$query = "INSERT INTO images (user, filelocation, size) VALUES ('$user', '$filelocation', '$size') ";
+		$inserted_id = $m -> executeQuery($query,'insert');
 
         //Return the data in JSON format
         echo json_encode(array('status' => 'success', 'data' => array('filelocation' => $filelocation, 'size' => $size)));
