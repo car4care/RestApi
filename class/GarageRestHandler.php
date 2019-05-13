@@ -12,6 +12,36 @@ include_once 'MailClient.php';
 class GarageRestHandler extends SimpleRest 
 {
 
+	function getAllBrands()
+	{
+
+		$m = new MySQL5();
+		$query = "select brand_name,logo_file from tbl_brands where isActive=1";
+
+		$resObj = new stdClass();
+
+		$brands = $m -> executeQuery($query,'select');
+		$resObj['status']=1;
+		$resObj['brand_name']=$brands -> brand_name;
+		$resObj['logo_url']=$brands -> logo_file;
+		$this -> output($resObj);
+	}
+
+
+	function getBrands()
+	{
+
+		$m = new MySQL5();
+		$query = "select brand_name,logo_file from tbl_brands where isActive=1 LIMIT 10";
+
+		$resObj = new stdClass();
+
+		$brands = $m -> executeQuery($query,'select');
+		$resObj['status']=1;
+		$resObj['brand_name']=$brands -> brand_name;
+		$resObj['logo_url']=$brands -> logo_file;
+		$this -> output($resObj);
+	}
 
 	function getServiceList()
 	{

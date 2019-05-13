@@ -18,7 +18,12 @@ switch($view){
 	case "" :
 		//404 - not found;
 		break;
-		
+
+	case "getBrands":
+		$GarageRestHandler = new GarageRestHandler();
+		$GarageRestHandler -> getBrands();
+	break;
+	
 	case "getService":
 		$GarageRestHandler = new GarageRestHandler();
 		$GarageRestHandler -> getServiceList();
