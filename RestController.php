@@ -19,12 +19,12 @@ switch($view){
 		//404 - not found;
 		break;
 		
-	case "SERVICELIST":
+	case "getService":
 		$GarageRestHandler = new GarageRestHandler();
 		$GarageRestHandler -> getServiceList();
 	break;
 	
-	case "REPAIRLIST":
+	case "getRepairList":
 		$GarageRestHandler = new GarageRestHandler();
 		$GarageRestHandler -> getRepairList();
 	break; 
@@ -34,30 +34,35 @@ switch($view){
 		$GarageRestHandler -> signIn($requestObj);
 	break;
 	
-	case "REPAIRPHOTOS":
+	case "addRepairPhotos":
 		$GarageRestHandler = new GarageRestHandler();
 		$GarageRestHandler -> addRepairPhotos($requestObj);
 	break;
 	
-	case "GETREPAIRPHOTOS":
+	case "getRepairPhotos":
 		$GarageRestHandler = new GarageRestHandler();
 		$GarageRestHandler -> getRepairPhotos($requestObj);
 	break;
 
-	case "CUSTOMERDETAILS":
+	case "addCustomerDetails":
 		$GarageRestHandler = new GarageRestHandler();
 		$GarageRestHandler -> addCustomerDetails($requestObj);
 	break;
 	
-	case "CUSTOMERSIGN":
+	case "addCustomerSignature":
 		$GarageRestHandler = new GarageRestHandler();
 		$GarageRestHandler -> addCustomerSignature($requestObj);
 	break;
 	
-	case "INVENTORYLIST":
+	case "getInventoryList":
 		$GarageRestHandler = new GarageRestHandler();
 		$GarageRestHandler -> getInventoryList();
 	break;
+	case "setInventoryList":
+		$GarageRestHandler = new GarageRestHandler();
+		$GarageRestHandler -> setInventoryList();
+	break;
+
 	
 }
 ?>

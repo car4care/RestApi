@@ -6,7 +6,7 @@ include_once "conf/dbSettings.php";
 include_once 'class/MySQL.php';
 include_once 'class/MailClient.php';
 
-class SmartCallLogin extends SimpleRest 
+class GarageLogin extends SimpleRest 
 {
 	function signUp($signUpObj)
 	{
