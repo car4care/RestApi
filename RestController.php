@@ -23,6 +23,10 @@ switch($view){
 		$GarageRestHandler = new GarageRestHandler();
 		$GarageRestHandler -> getBrands();
 	break;
+	case "getAllBrands":
+		$GarageRestHandler = new GarageRestHandler();
+		$GarageRestHandler -> getAllBrands();
+	break;
 	
 	case "getService":
 		$GarageRestHandler = new GarageRestHandler();
