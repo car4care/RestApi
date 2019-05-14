@@ -46,8 +46,8 @@ RewriteRule ^SmartCallAssistantAPI/api/countContacts/$  SmartCallAssistantAPI/Re
 RewriteRule ^SmartCallAssistantAPI/api/saveLogs/$  SmartCallAssistantAPI/RestController.php?view=SAVELOGS [nc,qsa]
 
 
-RewriteRule ^Garage/getBrands/$  Garage/RestController.php?view=getBrands [nc,qsa]
-RewriteRule ^Garage/getAllBrands/$  Garage/RestController.php?view=getAllBrands [nc,qsa]
+RewriteRule ^Garage/getBrands  Garage/RestController.php?view=getBrands [nc,qsa]
+RewriteRule ^Garage/getAllBrands  Garage/RestController.php?view=getAllBrands [nc,qsa]
 
 
 </IfModule>

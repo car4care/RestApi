@@ -15,16 +15,26 @@ class GarageRestHandler extends SimpleRest
 	function getAllBrands()
 	{
 
-		$m = new MySQL5();
-		$query = "select brand_name,logo_file from tbl_brands where isActive=1";
 
-		$resObj = new stdClass();
+		$m = new MySQL5();
+
+		/*
+		$query = "select brand_name,logo_file from tbl_brands where isActive=1 LIMIT 10";
+
+		$brands = array();
 
 		$brands = $m -> executeQuery($query,'select');
-		$resObj['status']=1;
-		$resObj['brand_name']=$brands -> brand_name;
-		$resObj['logo_url']=$brands -> logo_file;
-		$this -> output($resObj);
+
+
+		$this -> output($brands);
+	
+		*/
+
+		$brands = array();
+		$query = "select brand_id,brand_name,logo_file from tbl_brands where isActive=1";
+		$brands = $m -> executeQuery($query,'select');
+
+		print json_encode($brands);
 	}
 
 
@@ -32,15 +42,24 @@ class GarageRestHandler extends SimpleRest
 	{
 
 		$m = new MySQL5();
+		/*
 		$query = "select brand_name,logo_file from tbl_brands where isActive=1 LIMIT 10";
 
-		$resObj = new stdClass();
+		$brands = array();
 
 		$brands = $m -> executeQuery($query,'select');
-		$resObj['status']=1;
-		$resObj['brand_name']=$brands -> brand_name;
-		$resObj['logo_url']=$brands -> logo_file;
-		$this -> output($resObj);
+
+
+		$this -> output($brands);
+	
+		*/
+
+		$brands = array();
+		$query = "select brand_id,brand_name,logo_file from tbl_brands where isActive=1 LIMIT 10";
+		$brands = $m -> executeQuery($query,'select');
+
+		print json_encode($brands);
+		
 	}
 
 	function getServiceList()
